@@ -1,0 +1,42 @@
+---
+# Designates the webservers group of IPs
+- name: DVWA Setup
+  hosts: webservers
+  become: true
+  tasks:
+ # Uninstalls Apache2
+  - name: uninstall apache httpd (state=present is optional)
+    apt:
+      name: apache2
+      state: absent
+# Installs Docker package
+  - name: Install docker.io
+    apt:
+      update_cache: yes
+      name: docker.io
+      state: present
+# Installs python3
+  - name: Install pip3
+    apt:
+      update_cache: yes
+      force_apt_get: yes
+      name: python3-pip
+      state: present
+# Installs python Docker module
+  - name: Install python docker module
+    pip:
+      name: docker
+      state: present
+# Installs the DVWA Docker web container on the webservers.  Accessible via port 80 (HTTP)
+  - name: Install and launch docker.webcontainer
+    docker_container:
+      name: dvwa
+      image: cyberxsecurity/dvwa
+      state: started
+      restart_policy: always
+      published_ports: 80:80
+# Enables Docker
+  - name: Enable docker service
+    systemd:
+      name: docker
+      enabled: yes
