@@ -6,10 +6,10 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above, or allternatively, select playbooks contained in this repository may be used to install only certain pieces of it, such as Filebeat.
 
-  [DVWA](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Ansible%20DVWA%20Script.txt)
-  [ELK Stack](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Ansible%20ELK%20Stack%20Script.txt)
-  [Filebeat 7.4.0](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Filebeat%207.4.0%20Script.txt)
-  [Metricbeat 7.4.0](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Metricbeat%207.4.0%20Script.txt)
+ 1. [DVWA](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Ansible%20DVWA%20Script.txt)
+ 2. [ELK Stack](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Ansible%20ELK%20Stack%20Script.txt)
+ 3. [Filebeat 7.4.0](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Filebeat%207.4.0%20Script.txt)
+ 4. [Metricbeat 7.4.0](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Metricbeat%207.4.0%20Script.txt)
 
 This document contains the following details:
 - Description of the Topology
