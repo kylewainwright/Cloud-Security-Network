@@ -1,0 +1,31 @@
+---
+# Installs Filebeat 7.4.0 for ELK Stack Server- Monitors webserver IPs
+- name: installing and launching filebeat
+  hosts: webservers
+  become: yes
+  tasks:
+# Dowloads Filebeat .deb file
+  - name: download filebeat deb
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb
+ # Installs Filebeat .deb file
+  - name: install filebeat deb
+    command: dpkg -i filebeat-7.4.0-amd64.deb
+# Ensures CI/CD for Filebeat
+  - name: drop in filebeat.yml
+    copy:
+      src: /etc/ansible/roles/filebeat-config.yml
+      dest: /etc/filebeat/filebeat.yml
+# Enables and Configures Filebeat Modules
+  - name: enable and configure system module
+    command: filebeat modules enable system
+# Setup Filebeat
+  - name: setup filebeat
+    command: filebeat setup
+# Start Filebeat Service
+  - name: start filebeat service
+    command: service filebeat start
+# Enables Filebeat on system boot
+  - name: enable service filebeat on boot
+    systemd:
+      name: filebeat
+      enabled: yes

@@ -1,0 +1,31 @@
+---
+# Installs MetricBeat on webserver IPs for ELK Stack
+- name: Install metric beat
+  hosts: webservers
+  become: true
+  tasks:
+    # Downloads MetricBeat
+  - name: Download metricbeat
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb
+    # Installs MetricBeat
+  - name: install metricbeat
+    command: dpkg -i metricbeat-7.4.0-amd64.deb
+    # Use copy module to drop in MetricBeat configuration file
+  - name: drop in metricbeat config
+    copy:
+      src: /etc/ansible/roles/metricbeat-config.yml
+      dest: /etc/metricbeat/metricbeat.yml
+    # Enbables an configures Docker module for MetricBeat
+  - name: enable and configure docker module for metric beat
+    command: metricbeat modules enable docker
+    # Setup MetricBeat
+  - name: setup metric beat
+    command: metricbeat setup
+    # Start MetricBeat
+  - name: start metric beat
+    command: service metricbeat start
+    # Enable MetricBeat on system boot
+  - name: enable service metricbeat on boot
+    systemd:
+      name: metricbeat
+      enabled: yes
