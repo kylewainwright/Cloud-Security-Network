@@ -4,7 +4,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Diagrams/RedTeam%20Network%20Diagram.PNG)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above, or allternatively, select playbooks contained in this repository may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above, or alternatively, select playbooks contained in this repository may be used to install only certain pieces of it, such as Filebeat.
 
  1. [DVWA](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Ansible%20DVWA%20Script.txt)
  2. [ELK Stack](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Ansible%20ELK%20Stack%20Script.txt)
@@ -24,7 +24,9 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
+Load balancing ensures that the application will be highly efficient, accessible and scalable, in addition to restricting traffic overload to the network.
+An crucial aspect that load balancers provide to a network is their ability to mitigate Distributed Denial of Service (DDoS) attacks.  This is achieved by
+load balancers inherent functionality of distributing inbound network traffic evenly across the networks backend pool of webservers.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
