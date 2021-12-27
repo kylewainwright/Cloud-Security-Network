@@ -103,7 +103,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the [ELK Script](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Ansible%20ELK%20Stack%20Script.txt) file to `/etc/ansible/` within your Ansible node.
 - Update the `hosts`, located in the `/etc/ansible` directory
-- `nano hosts` 
+  - `nano hosts` 
 - Update the following:
   - Identify which IP address belongs to your elk group (this is the server that will monitor your webservers and where we will install our ELK container onto).  Additionally, establish that python 3 will be the interpreting language.  Here is an example:
    ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/elk%20hosts.jpg)
