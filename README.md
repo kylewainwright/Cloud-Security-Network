@@ -88,17 +88,16 @@ The playbook implements the following tasks:
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _Web-1 (10.0.0.5)
-- _Web-2 (10.0.0.6)
+- Web-1 (10.0.0.5)
+- Web-2 (10.0.0.6)
 
 We have installed the following Beats on these machines:
-- _Filebeat
-- _Metricbeat
+- Filebeat
+- Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
-**- _Filebeat:** Filebeat is utilized to collect log file data from specific locations.  This data is then organized, compiled and sent to Logstash/Elasticsearch.  For this instance, Filebeat is being utilized for webservers, and is monitoring data packets that are being sent to and from our webservers.
-**- _Metricbeat:** Metricbeat collects metrics based on a specified service.  This can range from OS of visitors, unique visitors to a website, unique visitors by country etc.  Such metrics are applicable to our webservers due to Metricbeat being used to collect web logs. 
+- **Filebeat:** Filebeat is utilized to collect log file data from specific locations.  This data is then organized, compiled and sent to Logstash/Elasticsearch.  For this instance, Filebeat is being utilized for webservers, and is monitoring data packets that are being sent to and from our webservers.
+- **Metricbeat:** Metricbeat collects metrics based on a specified service.  This can range from OS of visitors, unique visitors to a website, unique visitors by country etc.  Such metrics are applicable to our webservers due to Metricbeat being used to collect web logs. 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
