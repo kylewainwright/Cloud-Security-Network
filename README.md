@@ -40,8 +40,8 @@ paired with Ansible, to conduct scripted tasks upon the various VM's within the 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to specifically designated files and system logs.
 
-- _**Filebeat:** Captures data from specified log files (such as Apache) and generates and organizes the files to send to Logstash and/or Elasticsearch.
-- _**Metricbeat:** Collects and organizes metrics such as CPU usage, disk usage, and RAM
+**- _Filebeat:** Captures data from specified log files (such as Apache) and generates and organizes the files to send to Logstash and/or Elasticsearch.
+**- _Metricbeat:** Collects and organizes metrics such as CPU usage, disk usage, and RAM
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -58,11 +58,11 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the **Jumpox-Provisioner** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _**172.83.5.46
+**- _172.83.5.46** (for replication purposes, identify a workstation IP of your choice)
 
 Machines within the network can only be accessed by SSH-connection via port 22 from the Jumpbox-Provisioner VM.  Additionally, the ELK-server machine is 
 only accessible from the following IP address:
-- _**172.83.5.46
+**- _172.83.5.46** (for replication purposes, identify a workstation IP of your choice)
 
 A summary of the access policies in place can be found in the table below.
 
@@ -74,34 +74,40 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because:
+- _It reduces the probability of human error associated with manual configuations
+- _Automation drastically decreases the man hours that would be needed
+- _Implementing automation greatly increases the scalability of your network
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
-
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+**- _Step 1:** Establishes the "elk" group as the IPs that will be configured by the playbook
+**- _Step 2:** Installs Docker
+**- _Steps 3-4:** Installs python 3 and python docker module, respectively
+**- _Steps 5-6:** Enables our ELK-server VM to utilize more RAM for maximum functionality
+**- _Step 7:** Installs our ELK stack onto our ELK-server VM.  Establishes that port 5601 will be used to view Kibana
+**- _Step 8:** Enables the Docker services on the boot of the ELK-server VM
+- 
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- _Web-1 (10.0.0.5)
+- _Web-2 (10.0.0.6)
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- _Filebeat
+- _Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+**- _Filebeat:** Filebeat is utilized to collect log file data from specific locations.  This data is then organized, compiled and sent to Logstash/Elasticsearch.  For this instance, Filebeat is being utilized for webservers, and is monitoring data packets that are being sent to and from our webservers.
+**- _Metricbeat:** Metricbeat collects metrics based on a specified service.  This can range from OS of visitors, unique visitors to a website, unique visitors by country etc.  Such metrics are applicable to our webservers due to Metricbeat being used to collect web logs. 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+- Copy the [ELK Script]](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Ansible%20ELK%20Stack%20Script.txt) file to '/etc/ansible/' within your Ansible node.
+- Update the 'hosts' file to include the following:
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
