@@ -24,24 +24,34 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
+**Load Balancing**
+
 Load balancing ensures that the application will be highly efficient, accessible and scalable, in addition to restricting traffic overload to the network.
-An crucial aspect that load balancers provide to a network is their ability to mitigate Distributed Denial of Service (DDoS) attacks.  This is achieved by
+An crucial aspect that load balancers provide to a network is their ability to mitigate Distributed Denial of Service (DDoS) attacks.  This is achieved by a
 load balancers inherent functionality of distributing inbound network traffic evenly across the networks backend pool of webservers.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+**Jumpbox Provisioner**
+
+The Jumpbox Provisioner VM within my cloudnetwork is essential for scalable deployment of the network.  This is accomplished utilizing a Docker Container 
+paired with Ansible, to conduct scripted tasks upon the various VM's within the network, such as installing Filebeat and Metric beat on our webservers.
+
+**ELK Server**
+
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to specifically designated files and system logs.
+
+- **_Filebeat:** Captures data from specified log files (such as Apache) and generates and organizes the files to send to Logstash and/or Elasticsearch.
+- **_Metricbeat:** Collects and organizes metrics such as CPU usage, disk usage, and RAM
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name       | Function  | IP Address | Operating System |
+|------------|-----------|------------|------------------|
+| Jump Box   | Gateway   | 10.0.0.4   | Linux            |
+| Web-1      | Webserver | 10.0.0.5   | Linux            |
+| Web-2      | Webserver | 10.0.0.6   | Linux            |
+| ELK-Server | ELK       | 10.1.0.4   | Linux            |
 
 ### Access Policies
 
