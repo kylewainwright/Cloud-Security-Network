@@ -15,8 +15,8 @@
     copy:
       src: /etc/ansible/roles/metricbeat-config.yml
       dest: /etc/metricbeat/metricbeat.yml
-    # Enbables an configures Docker module for MetricBeat
-  - name: enable and configure docker module for metric beat
+    # Enbables and configures Docker module for MetricBeat
+  - name: enable and configure docker module for metricbeat
     command: metricbeat modules enable docker
     # Setup MetricBeat
   - name: setup metric beat
