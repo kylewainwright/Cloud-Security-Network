@@ -40,8 +40,8 @@ paired with Ansible, to conduct scripted tasks upon the various VM's within the 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to specifically designated files and system logs.
 
-- **_Filebeat:** Captures data from specified log files (such as Apache) and generates and organizes the files to send to Logstash and/or Elasticsearch.
-- **_Metricbeat:** Collects and organizes metrics such as CPU usage, disk usage, and RAM
+- _**Filebeat:** Captures data from specified log files (such as Apache) and generates and organizes the files to send to Logstash and/or Elasticsearch.
+- _**Metricbeat:** Collects and organizes metrics such as CPU usage, disk usage, and RAM
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -57,19 +57,20 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the **Jumpox-Provisioner** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- _**172.83.5.46
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by SSH-connection via port 22 from the Jumpbox-Provisioner VM.  Additionally, the ELK-server machine is 
+only accessible from the following IP address:
+- _**172.83.5.46
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name       | Publicly Accessible | Allowed IP Addresses |
+|------------|---------------------|----------------------|
+| Jump Box   | Yes                 | 172.83.5.46          |
+| ELK        | Yes                 | 172.83.5.46          |
+| Webservers | No                  |                      |
 
 ### Elk Configuration
 
