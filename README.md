@@ -103,13 +103,13 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the [ELK Script](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Ansible%20ELK%20Stack%20Script.txt) file to '/etc/ansible/' within your Ansible node.
+- Copy the [ELK Script](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Ansible%20ELK%20Stack%20Script.txt) file to `/etc/ansible/` within your Ansible node.
 - Update the 'hosts' file to include the following:
   - Establish which IP addresses belong to your webservers group (these will have Filebeat and Metricbeat installed onto them). Additionally, establish that python 3 will be the interpretting language. Here is an example:
-  - ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/webservers%20hosts.jpg)
+   ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/webservers%20hosts.jpg)
   
   - Identify which IP address belongs to your elk group (this is the server that will monitor your webservers and where we will install our ELK container onto).  Additionally, establish that python 3 will be the interpretting language.  Here is an example:
-  - ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/elk%20hosts.jpg)
+   ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/elk%20hosts.jpg)
   
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
