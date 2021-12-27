@@ -108,7 +108,9 @@ SSH into the control node and follow the steps below:
   - Identify which IP address belongs to your elk group (this is the server that will monitor your webservers and where we will install our ELK container onto).  Additionally, establish that python 3 will be the interpreting language.  Here is an example:
    ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/elk%20hosts.jpg)
   
-- Run the playbook, and navigate to ELK-servers IP address and established port to check that the installation worked as expected. Here is an example:
+- Run the playbook
+  - ansible-playbook elk-playbook.yml
+- Navigate to ELK-servers IP address and established port to check that the installation worked as expected. Here is an example:
   ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/Kibana%20Website.jpg)
   
 ### Using the Filebeat Playbook
@@ -116,12 +118,16 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the [Filebeat 7.4.0](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Filebeat%207.4.0%20Script.txt) file to `/etc/ansible/roles` within your Ansible node.
-- Update the `hosts` file, located in the `/etc/ansible` directory, to include the following:
+- Update the `hosts` file, located in the `/etc/ansible` directory,
+  - nano hosts
+- Update the following:
   - Establish which IP addresses belong to your webservers group (these will have Filebeat and Metricbeat installed onto them). Additionally, establish that python 3 will be the interpreting language. Here is an example:
   
    ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/webservers%20hosts.jpg)
  
-- Run the playbook, and navigate to [ELK-servers IP address:established port/app/kibana#/home/tutorial/systemLogs] (e.g. `http://52.180.145.34:5601/app/kibana#/home/tutorial/systemLogs` to check that the log file data is being collected.  Once at the site, scroll to the bottom and click **"Check Data"** on the right side of the **"Module Status"** section. Here is what you should see after a successful deployment of Filebeat:
+- Run the playbook
+  - ansible-playbook filebeat-playbook.yml 
+- Navigate to [ELK-servers IP address:established port/app/kibana#/home/tutorial/systemLogs] (e.g. `http://52.180.145.34:5601/app/kibana#/home/tutorial/systemLogs` to check that the log file data is being collected.  Once at the site, scroll to the bottom and click **"Check Data"** on the right side of the **"Module Status"** section. Here is what you should see after a successful deployment of Filebeat:
   ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/Filebeat%20Check%20Data.jpg)
   - **Note:** Your webserver and ELK-server VMs need to be running to allow Filebeat to collect data. 
   
@@ -130,19 +136,18 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the [Metricbeat 7.4.0](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Metricbeat%207.4.0%20Script.txt) file to `/etc/ansible/roles` within your Ansible node.
-- Update the `hosts` file, located in the `/etc/ansible` directory, to include the following:
+- Update the `hosts` file, located in the `/etc/ansible` directory 
+  - `nano hosts`
+- Update the following:
   - Establish which IP addresses belong to your webservers group (these will have Filebeat and Metricbeat installed onto them). Additionally, establish that python 3 will be the interpreting language. Here is an example:
   
    ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/webservers%20hosts.jpg)
  
-- Run the playbook, and navigate to [ELK-servers IP address:established port/app/kibana#/home/tutorial/systemMetrics (e.g. `http://52.180.145.34:5601/app/kibana#/home/tutorial/systemMetrics` to check that the log file data is being collected.  Once at the site, scroll to the bottom and click **"Check Data"** on the right side of the **"Module Status"** section. Here is what you should see after a successful deployment of Metricbeat:
+- Run the playbook
+  - `ansible-playbook metricbeat-playbook.yml` 
+- Navigate to [ELK-servers IP address:established port/app/kibana#/home/tutorial/systemMetrics (e.g. `http://52.180.145.34:5601/app/kibana#/home/tutorial/systemMetrics` to check that the log file data is being collected.  Once at the site, scroll to the bottom and click **"Check Data"** on the right side of the **"Module Status"** section. Here is what you should see after a successful deployment of Metricbeat:
   ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/Metricbeat%20Check%20Data.jpg)
-  - **Note:** Your webserver and ELK-server VMs need to be running to allow Filebeat to collect data.
+  - **Note:** Your webserver and ELK-server VMs need to be running to allow Metricbeat to collect data.
 
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
