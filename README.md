@@ -57,11 +57,11 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the **Jumpox-Provisioner** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-**- _172.83.5.46** (for replication purposes, identify a workstation IP of your choice)
+- **172.83.5.46** (for replication purposes, identify a workstation IP of your choice)
 
 Machines within the network can only be accessed by SSH-connection via port 22 from the Jumpbox-Provisioner VM.  Additionally, the ELK-server machine is 
 only accessible from the following IP address:
-**- _172.83.5.46** (for replication purposes, identify a workstation IP of your choice)
+- **172.83.5.46** (for replication purposes, identify a workstation IP of your choice)
 
 A summary of the access policies in place can be found in the table below.
 
@@ -74,18 +74,17 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because:
-- _It reduces the probability of human error associated with manual configuations
-- _Automation drastically decreases the man hours that would be needed
-- _Implementing automation greatly increases the scalability of your network
+- It reduces the probability of human error associated with manual configuations
+- Automation drastically decreases the man hours that would be needed
+- Implementing automation greatly increases the scalability of your network
 
 The playbook implements the following tasks:
-**- _Step 1:** Establishes the "elk" group as the IPs that will be configured by the playbook
-**- _Step 2:** Installs Docker
-**- _Steps 3-4:** Installs python 3 and python docker module, respectively
-**- _Steps 5-6:** Enables our ELK-server VM to utilize more RAM for maximum functionality
-**- _Step 7:** Installs our ELK stack onto our ELK-server VM.  Establishes that port 5601 will be used to view Kibana
-**- _Step 8:** Enables the Docker services on the boot of the ELK-server VM
-- 
+- **Step 1:** Establishes the "elk" group as the IPs that will be configured by the playbook
+- **Step 2:** Installs Docker
+- **Steps 3-4:** Installs python 3 and python docker module, respectively
+- **Steps 5-6:** Enables our ELK-server VM to utilize more RAM for maximum functionality
+- **Step 7:** Installs our ELK stack onto our ELK-server VM.  Establishes that port 5601 will be used to view Kibana
+- **Step 8:** Enables the Docker services on the boot of the ELK-server VM
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
