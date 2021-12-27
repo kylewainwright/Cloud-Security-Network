@@ -102,12 +102,14 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the [ELK Script](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Ansible%20ELK%20Stack%20Script.txt) file to `/etc/ansible/` within your Ansible node.
-- Update the `hosts`, located in the `/etc/ansible` directory, to include the following:
+- Update the `hosts`, located in the `/etc/ansible` directory
+- `nano hosts` 
+- Update the following:
   - Identify which IP address belongs to your elk group (this is the server that will monitor your webservers and where we will install our ELK container onto).  Additionally, establish that python 3 will be the interpreting language.  Here is an example:
    ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/elk%20hosts.jpg)
   
 - Run the playbook
-  - ansible-playbook elk-playbook.yml
+  - `ansible-playbook elk-playbook.yml`
 - Navigate to ELK-servers IP address and established port to check that the installation worked as expected. Here is an example:
   ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/Kibana%20Website.jpg)
   
@@ -117,14 +119,14 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the [Filebeat 7.4.0](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Ansible/Filebeat%207.4.0%20Script.txt) file to `/etc/ansible/roles` within your Ansible node.
 - Update the `hosts` file, located in the `/etc/ansible` directory,
-  - nano hosts
+  - `nano hosts`
 - Update the following:
   - Establish which IP addresses belong to your webservers group (these will have Filebeat and Metricbeat installed onto them). Additionally, establish that python 3 will be the interpreting language. Here is an example:
   
    ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/webservers%20hosts.jpg)
  
 - Run the playbook
-  - ansible-playbook filebeat-playbook.yml 
+  - `ansible-playbook filebeat-playbook.yml` 
 - Navigate to [ELK-servers IP address:established port/app/kibana#/home/tutorial/systemLogs] (e.g. `http://52.180.145.34:5601/app/kibana#/home/tutorial/systemLogs` to check that the log file data is being collected.  Once at the site, scroll to the bottom and click **"Check Data"** on the right side of the **"Module Status"** section. Here is what you should see after a successful deployment of Filebeat:
   ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/Filebeat%20Check%20Data.jpg)
   - **Note:** Your webserver and ELK-server VMs need to be running to allow Filebeat to collect data. 
