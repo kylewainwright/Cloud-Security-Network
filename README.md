@@ -40,8 +40,8 @@ paired with Ansible, to conduct scripted tasks upon the various VM's within the 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to specifically designated files and system logs.
 
-**- _Filebeat:** Captures data from specified log files (such as Apache) and generates and organizes the files to send to Logstash and/or Elasticsearch.
-**- _Metricbeat:** Collects and organizes metrics such as CPU usage, disk usage, and RAM
+**- Filebeat:** Captures data from specified log files (such as Apache) and generates and organizes the files to send to Logstash and/or Elasticsearch.
+**- Metricbeat:** Collects and organizes metrics such as CPU usage, disk usage, and RAM
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
