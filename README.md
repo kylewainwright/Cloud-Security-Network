@@ -22,14 +22,13 @@ This document contains the following details:
 
 ### Description of the Topology
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
 
 **Load Balancing**
 
 Load balancing ensures that the application will be highly efficient, accessible and scalable, in addition to restricting traffic overload to the network.
 An crucial aspect that load balancers provide to a network is their ability to mitigate Distributed Denial of Service (DDoS) attacks.  This is achieved by a
-load balancers inherent functionality of distributing inbound network traffic evenly across the networks backend pool of webservers.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+load balancers inherent functionality of distributing inbound network traffic evenly across the network's backend pool of webservers.
 
 **Jumpbox Provisioner**
 
@@ -43,7 +42,6 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - **Metricbeat:** Collects and organizes metrics such as CPU usage, disk usage, and RAM
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name       | Function  | IP Address | Operating System |
 |------------|-----------|------------|------------------|
