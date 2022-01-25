@@ -131,7 +131,7 @@ SSH into the control node and follow the steps below:
   ![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Images/Filebeat%20Check%20Data.jpg)
   - **Note:** Your webserver and ELK-server VMs need to be running to allow Filebeat to collect data. 
   
-  ### Using the Metricbeat Playbook
+### Using the Metricbeat Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
