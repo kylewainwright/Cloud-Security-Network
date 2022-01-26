@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Diagrams/RedTeam%20Network%20Diagram.PNG)
+![Screenshot](https://github.com/kylewainwright/Cloud-Security-Network/blob/main/Diagrams/RedNet%20Diagram.jpg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above, or alternatively, select playbooks contained in this repository may be used to install only certain pieces of it, such as Filebeat.
 
