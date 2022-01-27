@@ -55,18 +55,18 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the **Jumpox-Provisioner** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- **172.83.5.46** (for replication purposes, identify a workstation IP of your choice)
+- **172.1.1.1** (for replication purposes, identify a workstation IP of your choice)
 
 Machines within the network can only be accessed by SSH-connection via port 22 from the Jumpbox-Provisioner VM.  Additionally, the ELK-server machine is 
 only accessible from the following IP address:
-- **172.83.5.46** (for replication purposes, identify a workstation IP of your choice)
+- **172.1.1.1** (for replication purposes, identify a workstation IP of your choice)
 
 A summary of the access policies in place can be found in the table below.
 
 | Name       | Publicly Accessible | Allowed IP Addresses |
 |------------|---------------------|----------------------|
-| Jump Box   | Yes                 | 172.83.5.46          |
-| ELK        | Yes                 | 172.83.5.46          |
+| Jump Box   | Yes                 | 172.1.1.1            |
+| ELK        | Yes                 | 172.1.1.1            |
 | Webservers | No                  |                      |
 
 ### Elk Configuration
